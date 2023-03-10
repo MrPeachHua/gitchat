@@ -1,0 +1,74 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/createUser": {
+            "get": {
+                "tags": [
+                    "用户模块"
+                ],
+                "summary": "创建用户",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "名称",
+                        "name": "name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/deleteUser": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "删除用户"
+                ],
+                "summary": "删除用户",
+                "parameters": [
+                    {
+                        "description": "JSON数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/service.ConfigParam"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/index": {
+            "get": {
+                "tags": [
+                    "创建用户"
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "service.ConfigParam": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "sdfdsf"
+                },
+                "userId": {
+                    "type": "integer",
+                    "example": 7
+                }
+            }
+        }
+    }
+}

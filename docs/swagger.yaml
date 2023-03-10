@@ -1,0 +1,47 @@
+definitions:
+  service.ConfigParam:
+    properties:
+      name:
+        example: sdfdsf
+        type: string
+      userId:
+        example: 7
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /createUser:
+    get:
+      parameters:
+      - description: 名称
+        in: query
+        name: name
+        type: string
+      responses: {}
+      summary: 创建用户
+      tags:
+      - 用户模块
+  /deleteUser:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: JSON数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/service.ConfigParam'
+      produces:
+      - application/json
+      responses: {}
+      summary: 删除用户
+      tags:
+      - 删除用户
+  /index:
+    get:
+      responses: {}
+      tags:
+      - 创建用户
+swagger: "2.0"
